@@ -6,6 +6,4 @@
     type Test = TupleToUnion<Arr> // expected to be '1' | '2' | '3'
 */
 
-type TupleToUnion<T> =  {
-    [key in keyof T]: T[key];
-};
+type TupleToUnion<T extends any[]> = T[number];
